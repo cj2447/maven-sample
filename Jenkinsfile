@@ -8,7 +8,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'hello1'
-                // mvn clean install pom.xml
+                mvn clean install pom.xml
             }
 
         }
