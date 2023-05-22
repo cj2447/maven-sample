@@ -3,8 +3,11 @@ pipeline{
 
     stages{
         stage('Build'){
-            echo 'hello1'
-            mvn clean install pom.xml
+            steps{
+                echo 'hello1'
+                mvn clean install pom.xml
+            }
+
         }
     }
 }
