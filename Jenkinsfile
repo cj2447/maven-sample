@@ -3,7 +3,7 @@ pipeline{
 
     stages{
         stage('Build'){
-            echo 'hello'
+            echo 'hello1'
             mvn clean install pom.xml
         }
     }
