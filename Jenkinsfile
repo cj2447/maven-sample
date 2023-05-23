@@ -9,7 +9,7 @@ pipeline{
             steps{
                 echo 'hello1'
                 sh 'ls -l'
-                sh 'mvn clean install pom.xml'
+                sh 'mvn clean install'
             }
 
         }
