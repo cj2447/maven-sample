@@ -11,7 +11,22 @@ pipeline{
                 sh 'ls -l'
                 sh 'mvn clean install'
             }
-
+        stage('Upload')
+            steps{
+                rtUpload{
+                    spec: '''{
+                        "files":[
+                            {
+                            "pattern": "target/maven*.jar",
+                            "target": "sample-repo",
+                            "recursive": "false"
+                        }
+                        ]
+                    }
+                    '''
+                }
+            }
+        stage('Publish')
         }
     }
 }
