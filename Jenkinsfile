@@ -21,7 +21,7 @@ pipeline{
                     spec: '''{
                         "files":[
                             {
-                            "pattern": "target/.jar",
+                            "pattern": "target/*.jar",
                             "target": "sample-repo",
                             "recursive": "false"
                         }
