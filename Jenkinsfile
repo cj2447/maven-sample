@@ -11,7 +11,7 @@ pipeline{
                 echo 'hello1'
                 sample = sh (
                     version: 'find target -name "*.jar"'
-                    returnStdout: true
+   
                 )
             }
         }
