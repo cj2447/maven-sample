@@ -11,8 +11,7 @@ pipeline{
                 echo 'hello1'
                 sh 'ls -l'
                 sh 'mvn clean install'
-                echo "${JOB_NAME}"
-                echo "${BUILD_NUMBER}"
+                echo "${user.home}/.m2/repository"
             }
         }
         stage('Upload'){
