@@ -19,8 +19,7 @@ pipeline{
             steps{
                 rtUpload(
                     buildName: "$JOB_NAME",
-                    buildName: "$BUILD_NUMBER",
-                    buildNumber
+                    buildNumber: "$BUILD_NUMBER",
                     serverId: "$serverId",
                     spec: '''{
                         "files":[
