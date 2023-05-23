@@ -6,11 +6,13 @@ pipeline{
     // }
     stages{
         stage('Build'){
+
             steps{
                 echo 'hello1'
                 sh 'ls -l'
                 sh 'mvn clean install'
             }
+        }
         stage('Upload')
             steps{
                 rtUpload{
@@ -26,7 +28,5 @@ pipeline{
                     '''
                 }
             }
-
-        }
     }
 }
