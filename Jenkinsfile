@@ -9,13 +9,13 @@ pipeline{
 
             steps{
                 echo 'hello1'
-                hello: sh 'ls -l'
+                hello =  "hello"
                 echo "$hello"
-                
             }
         }
         stage('Upload'){
             steps{
+                // version = sh "find target -name "*.jar""
                 rtUpload(
                     buildName: "$JOB_NAME",
                     buildNumber: "$BUILD_NUMBER",
