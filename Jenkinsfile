@@ -9,8 +9,10 @@ pipeline{
 
             steps{
                 echo 'hello1'
-                sample: "find target -name '*.jar'"
-                echo "$sample"
+                sample = sh (
+                    version: 'find target -name "*.jar"'
+                    returnStdout: true
+                )
             }
         }
         stage('Upload'){
