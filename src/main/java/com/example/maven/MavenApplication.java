@@ -21,10 +21,8 @@ public class MavenApplication {
 	String about(){
 		return "Sample Maven Build";
 	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(MavenApplication.class, args);
 		
 	}
-
 }
