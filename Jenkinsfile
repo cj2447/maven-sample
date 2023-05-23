@@ -16,7 +16,7 @@ pipeline{
         stage('Upload'){
             steps{
                 rtUpload{
-                    serverId: "${SERVER_ID}" ,
+                    serverId: "${SERVER_ID}"
                     spec: '''{
                         "files":[
                             {
