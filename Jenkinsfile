@@ -17,7 +17,7 @@ pipeline{
         }
         stage('Upload'){
             steps{
-                rtUpload{
+                rtUpload(
                     serverId: "$serverId",
                     spec: """{
                         "files":[
@@ -29,7 +29,7 @@ pipeline{
                         ]
                     }
                     """
-                }
+                )
             }
         }
     }
