@@ -9,13 +9,14 @@ pipeline{
 
             steps{
                 echo 'hello1'
-                sh 'ls -l'
-                sh 'mvn clean install'
-                echo "${user.home}/.m2/repository"
+                hello: sh 'ls -l'
+                echo "$hello"
+                
             }
         }
         stage('Upload'){
             steps{
+                version = sh "find target -name "*.jar""
                 rtUpload(
                     buildName: "$JOB_NAME",
                     buildNumber: "$BUILD_NUMBER",
