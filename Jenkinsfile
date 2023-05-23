@@ -19,7 +19,7 @@ pipeline{
             steps{
                 rtUpload{
                     serverId: "$serverId",
-                    spec: '''{
+                    spec: """{
                         "files":[
                             {
                             "pattern": "target/maven.*.jar",
@@ -28,7 +28,7 @@ pipeline{
                         }
                         ]
                     }
-                    '''
+                    """
                 }
             }
         }
