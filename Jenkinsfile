@@ -8,6 +8,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'hello1'
+                sh 'ls -l'
                 sh 'mvn clean install pom.xml'
             }
 
