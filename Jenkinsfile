@@ -9,10 +9,6 @@ pipeline{
 
             steps{
                 echo 'hello1'
-                sample = sh (
-                    version: 'find target -name "*.jar"'
-   
-                )
             }
         }
         stage('Upload'){
@@ -25,7 +21,7 @@ pipeline{
                     spec: '''{
                         "files":[
                             {
-                            "pattern": "target/maven.*",
+                            "pattern": "target/.jar",
                             "target": "sample-repo",
                             "recursive": "false"
                         }
