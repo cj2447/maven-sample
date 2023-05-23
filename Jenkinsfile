@@ -16,7 +16,6 @@ pipeline{
         }
         stage('Upload'){
             steps{
-                version = sh "find target -name "*.jar""
                 rtUpload(
                     buildName: "$JOB_NAME",
                     buildNumber: "$BUILD_NUMBER",
