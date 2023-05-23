@@ -13,7 +13,7 @@ pipeline{
                 sh 'mvn clean install'
             }
         }
-        stage('Upload')
+        stage('Upload'){}
             steps{
                 rtUpload{
                     spec: '''{
@@ -28,5 +28,6 @@ pipeline{
                     '''
                 }
             }
+        }
     }
 }
