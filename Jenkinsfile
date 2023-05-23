@@ -16,6 +16,8 @@ pipeline{
         stage('Upload'){
             steps{
                 rtUpload{
+                    buildName: "${JOB_NAME}"
+                    buildNumber: "${BUILD_NUMBER}"
                     serverId: "${SERVER_ID}"
                     spec: '''{
                         "files":[
