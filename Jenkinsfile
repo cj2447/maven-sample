@@ -9,7 +9,7 @@ pipeline{
 
             steps{
                 echo 'hello1'
-                sample: "he"
+                sample: "find target -name '*.jar'"
                 echo "$sample"
             }
         }
