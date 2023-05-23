@@ -18,6 +18,9 @@ pipeline{
         stage('Upload'){
             steps{
                 rtUpload(
+                    buildName: "$JOB_NAME",
+                    buildName: "$BUILD_NUMBER",
+                    buildNumber
                     serverId: "$serverId",
                     spec: '''{
                         "files":[
@@ -27,8 +30,7 @@ pipeline{
                             "recursive": "false"
                         }
                         ]
-                    }
-                    '''
+                    }'''
                 )
             }
         }
