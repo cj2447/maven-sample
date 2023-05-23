@@ -9,8 +9,8 @@ pipeline{
 
             steps{
                 echo 'hello1'
-                hello =  "hello"
-                echo "$hello"
+                sample: "he"
+                echo "$sample"
             }
         }
         stage('Upload'){
