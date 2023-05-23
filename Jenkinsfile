@@ -10,29 +10,27 @@ pipeline{
             steps{
                 echo 'hello1'
                 sh 'ls -l'
-                // sh 'mvn clean install'
+                sh 'mvn clean install'
                 echo "${JOB_NAME}"
                 echo "${BUILD_NUMBER}"
             }
         }
-        // stage('Upload'){
-        //     steps{
-        //         rtUpload{
-        //             buildName: "${JOB_NAME}"
-        //             buildNumber: "${BUILD_NUMBER}"
-        //             serverId: "${SERVER_ID}"
-        //             spec: '''{
-        //                 "files":[
-        //                     {
-        //                     "pattern": "target/maven*.jar",
-        //                     "target": "sample-repo",
-        //                     "recursive": "false"
-        //                 }
-        //                 ]
-        //             }
-        //             '''
-        //         }
-        //     }
-        // }
+        stage('Upload'){
+            steps{
+                rtUpload{
+                    serverId: "artifactory"
+                    spec: '''{
+                        "files":[
+                            {
+                            "pattern": "target/maven.*.jar",
+                            "target": "sample-repo",
+                            "recursive": "false"
+                        }
+                        ]
+                    }
+                    '''
+                }
+            }
+        }
     }
 }
